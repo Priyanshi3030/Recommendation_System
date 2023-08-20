@@ -12,14 +12,22 @@
   align-items: center;
 }
 
+.searchImage {
+  flex-grow: 0; 
+  flex-shrink: 1;
+  margin: 0;
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+}
 
 .grid {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  max-width: 850px;
-  margin-top: 1rem;
+  max-width: 1500px;
+  margin-top: 2rem;
 }
 
 .card {
@@ -30,8 +38,8 @@
   background-color: white;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
+  border: black;
+  border-radius: 25px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 250px;
   box-shadow: 0 1px 8px #b8c6db;
@@ -42,9 +50,9 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-  opacity: 0.8;
+  color: white;
+  border-color: black;
+  opacity: 0.9;
 }
 
 .card h2 {
@@ -77,6 +85,7 @@
 }
 
 .searchbox {
+  border: 50%;
   width: 100%;
   max-width: 850px;
   position: relative;
@@ -84,6 +93,7 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
+  top:0;
 	margin: auto;
 }
 
@@ -91,38 +101,35 @@
   width: 100%;
   font-family: 'Montserrat', sans-serif;
   font-size: 17px;
-  font-weight: 500;
+  font-weight: 300;
   padding: 15px 45px 15px 15px;
-  background-color: #9c9c9c;
-  color: #ffffff;
-  border-radius: 6px;
-  border:none;
+  background-color: #9DE4FB;
+  color: black;
+  border-radius: 25px;
+  border:3px;
   transition: all .4s;
 }
 
 .searchinput::placeholder {
-  color: #ffffff;
+  color: grey;
   font-weight: 500;
 }
 
 .searchinput:focus {
-  border:none;
-  outline:none;
   box-shadow: 0 1px 8px #b8c6db;
   -moz-box-shadow: 0 1px 8px #b8c6db;
   -webkit-box-shadow: 0 1px 8px #b8c6db;
 }
 
 .searchbtn {
-  background-color: #111111;
+  background-color: #9DE4FB;
+  border-radius: 25px;
   font-size: 24px;
   padding: 6px 12px;
-  margin-left: -39px;
-  border:none;
-  color: white;
+  margin-left: 39px;
+  color: black;
   transition: all .4s;
   z-index: 10;
-  border-radius: 6px;
 }
 
 .searchbtn:hover {
@@ -134,15 +141,54 @@
   outline:none;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
+.hide {
+  display: none;
+  visibility: hidden;
+  height: 0;
+}
+
+.pagination_container {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
+
+.arrow_text {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.pagination_number {
+  --size: 2.5rem;
+  --margin: 0.5rem;
+  color: black;
+  margin: 0 var(--margin);
+  border-radius: 6px;
+  background: #9DE4FB;
+  max-width: auto;
+  min-width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: -2px;
+  padding: 0 0.7rem;
+}
+
+.pagination_disabled {
+  cursor: not-allowed;
+  background-color: #9DE4FB;
+}
+
+@media (hover: hover) {
+  .pagination_number:hover {
+    background: #C8F0FE;
   }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
-  }
-} */
+}
+.pagination_number:active {
+  background: #282828;
+}
+
